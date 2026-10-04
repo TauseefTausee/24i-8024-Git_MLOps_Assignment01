@@ -73,7 +73,11 @@ def train(df):
         X, y, test_size=0.2, random_state=RANDOM_STATE
     )
 
+<<<<<<< HEAD
     scaler = preprocessing.StandardScaler()  # standardize features (zero mean, unit variance)
+=======
+    scaler = preprocessing.MinMaxScaler()  # scale features to the 0-1 range
+>>>>>>> feature-tuning-24i-8024
 
     model = GradientBoostingRegressor(
         n_estimators=N_ESTIMATORS,
