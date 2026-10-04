@@ -9,7 +9,7 @@ A small house price prediction project used to practise a Git and GitHub workflo
 ```
 ├── data/              # raw dataset (dataset.csv), ignored by Git
 ├── src/
-│   └── train_24i-8024.py
+│   └── train.py
 ├── model/             # trained model output, ignored by Git
 ├── .gitignore
 ├── requirements.txt
@@ -34,7 +34,7 @@ pip install -r requirements.txt
 ## Train the model
 
 ```bash
-python src/train_24i-8024.py
+python src/train.py
 ```
 
 The script loads `data/dataset.csv`, trains a Gradient Boosting regressor and saves it to `model/model_24i-8024.pkl`.

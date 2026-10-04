@@ -3,7 +3,7 @@ MLOps Assignment 1 - House Price Prediction
 Student ID: 24i-8024
 
 Loads the dataset from data/, trains a model and saves it into model/.
-Run from the project root:  python src/train_24i-8024.py
+Run from the project root:  python src/train.py
 """
 import os
 
@@ -73,11 +73,7 @@ def train(df):
         X, y, test_size=0.2, random_state=RANDOM_STATE
     )
 
-<<<<<<< HEAD
-    scaler = preprocessing.StandardScaler()  # standardize features (zero mean, unit variance)
-=======
     scaler = preprocessing.MinMaxScaler()  # scale features to the 0-1 range
->>>>>>> feature-tuning-24i-8024
 
     model = GradientBoostingRegressor(
         n_estimators=N_ESTIMATORS,
