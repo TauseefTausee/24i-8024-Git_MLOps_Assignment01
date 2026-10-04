@@ -72,7 +72,7 @@ def train(df):
         X, y, test_size=0.2, random_state=RANDOM_STATE
     )
 
-    scaler = None  # no feature scaling yet (baseline)
+    scaler = preprocessing.MinMaxScaler()  # scale features to the 0-1 range
 
     model = GradientBoostingRegressor(
         n_estimators=N_ESTIMATORS, random_state=RANDOM_STATE
