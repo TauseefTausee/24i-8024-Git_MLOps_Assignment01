@@ -27,6 +27,7 @@ MODEL_PATH = os.path.join(MODEL_DIR, f"model_{STUDENT_ID}.pkl")
 # Hyperparameters
 RANDOM_STATE = 42
 N_ESTIMATORS = 200
+LEARNING_RATE = 0.1
 
 
 def create_sample_dataset(path):
@@ -72,10 +73,12 @@ def train(df):
         X, y, test_size=0.2, random_state=RANDOM_STATE
     )
 
-    scaler = None  # no feature scaling yet (baseline)
+    scaler = preprocessing.StandardScaler()  # standardize features (zero mean, unit variance)
 
     model = GradientBoostingRegressor(
-        n_estimators=N_ESTIMATORS, random_state=RANDOM_STATE
+        n_estimators=N_ESTIMATORS,
+        learning_rate=LEARNING_RATE,
+        random_state=RANDOM_STATE,
     )
 
     steps = [("model", model)]
